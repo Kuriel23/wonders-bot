@@ -1,5 +1,4 @@
 const discord = require("discord.js");
-const { GiveawaysManager } = require("discord-giveaways");
 require("dotenv").config();
 
 const client = new discord.Client({
@@ -19,17 +18,6 @@ client.cor = "#000000";
 client.canais = {
   errors: "1047219857567010837",
 };
-
-const manager = new GiveawaysManager(client, {
-  storage: "./giveaways.json",
-  default: {
-    botsCanWin: false,
-    embedColor: client.cor,
-    embedColorEnd: client.cor,
-    reaction: "🎉",
-  },
-});
-client.giveawaysManager = manager;
 
 process.on("unhandledRejection", (error) => {
   console.log(error);
