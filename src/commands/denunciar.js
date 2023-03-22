@@ -34,7 +34,7 @@ module.exports = {
   async execute(interaction, client) {
     const user = interaction.options.getUser("usuário");
     const motivo = interaction.options.getString("motivo");
-    const clue = interaction.options.getString("prova").proxyURL;
+    const clue = interaction.options.getAttachment("prova").proxyURL;
     const embed = new discord.EmbedBuilder()
       .setTitle("Nova denúncia!")
       .setColor(client.cor)
